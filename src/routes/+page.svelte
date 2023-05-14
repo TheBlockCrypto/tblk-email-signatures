@@ -42,7 +42,7 @@
 			<div class="flex flex-col gap-2" transition:fly={{ x: 100, duration: 350 }}>
 				<label class="font-medium" for="name"> Display Name </label>
 				<input
-					class="shadow-md transition-all focus:outline-none focus:border-2 focus:border-violet-500 focus:shadow-sm focus:shadow-violet-300 py-2 px-3 w-72"
+					class="shadow-md focus:outline-none focus:border-2 focus:border-violet-500 focus:shadow-sm focus:shadow-violet-300 py-2 px-3 w-72"
 					name="name"
 					bind:value={fields.name}
 				/>
@@ -51,7 +51,7 @@
 			<div class="flex flex-col gap-2" transition:fly={{ x: 100, duration: 350 }}>
 				<label class="font-medium" for="title"> Job Title </label>
 				<input
-					class="shadow-md transition-all focus:outline-none focus:border-2 focus:border-violet-500 focus:shadow-sm focus:shadow-violet-300 py-2 px-3 w-72"
+					class="shadow-md focus:outline-none focus:border-2 focus:border-violet-500 focus:shadow-sm focus:shadow-violet-300 py-2 px-3 w-72"
 					name="title"
 					bind:value={fields.title}
 				/>
@@ -60,7 +60,7 @@
 			<div class="flex flex-col gap-2" transition:fly={{ x: 100, duration: 350 }}>
 				<label class="font-medium" for="number"> Phone Number </label>
 				<input
-					class="shadow-md transition-all focus:outline-none focus:border-2 focus:border-violet-500 focus:shadow-sm focus:shadow-violet-300 py-2 px-3 w-72"
+					class="shadow-md focus:outline-none focus:border-2 focus:border-violet-500 focus:shadow-sm focus:shadow-violet-300 py-2 px-3 w-72"
 					name="number"
 					bind:value={fields.number}
 				/>
@@ -69,7 +69,7 @@
 			<div class="flex flex-col gap-2" transition:fly={{ x: 100, duration: 350 }}>
 				<label class="font-medium" for="location"> Location </label>
 				<input
-					class="shadow-md transition-all focus:outline-none focus:border-2 focus:border-violet-500 focus:shadow-sm focus:shadow-violet-300 py-2 px-3 w-72"
+					class="shadow-md focus:outline-none focus:border-2 focus:border-violet-500 focus:shadow-sm focus:shadow-violet-300 py-2 px-3 w-72"
 					name="location"
 					bind:value={fields.location}
 				/>
@@ -84,7 +84,7 @@
 					<label class="font-medium" for="twitter"> Twitter </label>
 					<div class="flex">
 						<input
-							class="shadow-md transition-all focus:outline-none focus:border-2 focus:border-sky-500 focus:shadow-sm focus:shadow-sky-300 py-2 px-3 w-72"
+							class="shadow-md focus:outline-none focus:border-2 focus:border-sky-500 focus:shadow-sm focus:shadow-sky-300 py-2 px-3 w-72"
 							name="twitter"
 							bind:value={fields.twitter}
 						/>
@@ -106,7 +106,7 @@
 
 					<div class="flex">
 						<input
-							class="shadow-md transition-all focus:outline-none focus:border-2 focus:border-fuchsia-500 focus:shadow-sm focus:shadow-rose-400 py-2 px-3 w-72"
+							class="shadow-md focus:outline-none focus:border-2 focus:border-fuchsia-500 focus:shadow-sm focus:shadow-rose-400 py-2 px-3 w-72"
 							name="instagram"
 							bind:value={fields.instagram}
 						/>
@@ -127,7 +127,7 @@
 					<label class="font-medium" for="linkedin"> LinkedIn </label>
 					<div class="flex">
 						<input
-							class="shadow-md transition-all focus:outline-none focus:border-2 focus:border-sky-800 focus:shadow-sm focus:shadow-sky-600 py-2 px-3 w-72"
+							class="shadow-md focus:outline-none focus:border-2 focus:border-sky-800 focus:shadow-sm focus:shadow-sky-600 py-2 px-3 w-72"
 							name="linkedin"
 							bind:value={fields.linkedin}
 						/>
@@ -148,7 +148,7 @@
 					<label class="font-medium" for="telegram"> Telegram </label>
 					<div class="flex">
 						<input
-							class="shadow-md transition-all focus:outline-none focus:border-2 focus:border-blue-600 focus:shadow-sm focus:shadow-blue-400 py-2 px-3 w-72"
+							class="shadow-md focus:outline-none focus:border-2 focus:border-blue-600 focus:shadow-sm focus:shadow-blue-400 py-2 px-3 w-72"
 							bind:value={fields.telegram}
 						/>
 						<button
@@ -168,7 +168,7 @@
 					<label class="font-medium" for="whatsapp"> WhatsApp </label>
 					<div class="flex">
 						<input
-							class="shadow-md transition-all focus:outline-none focus:border-2 focus:border-green-500 focus:shadow-sm focus:shadow-green-300 py-2 px-3 w-72"
+							class="shadow-md focus:outline-none focus:border-2 focus:border-green-500 focus:shadow-sm focus:shadow-green-300 py-2 px-3 w-72"
 							name="whatsapp"
 							bind:value={fields.whatsapp}
 						/>
@@ -189,7 +189,7 @@
 					<label class="font-medium" for="link"> Link </label>
 					<div class="flex">
 						<input
-							class="shadow-md transition-all focus:outline-none focus:border-2 focus:border-slate-500 focus:shadow-sm focus:shadow-slate-300 py-2 px-3 w-72"
+							class="shadow-md focus:outline-none focus:border-2 focus:border-slate-500 focus:shadow-sm focus:shadow-slate-300 py-2 px-3 w-72"
 							name="link"
 							bind:value={fields.link}
 						/>
