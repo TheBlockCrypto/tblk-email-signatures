@@ -35,7 +35,7 @@
 </script>
 
 <div>
-	<div class="flex gap-12 p-4 justify-center border-2 bg-slate-50 border-slate-200 w-auto">
+	<div class="flex gap-12 p-4 justify-center border-2 bg-slate-50 border-slate-50 shadow-md w-auto">
 		<div class="personal flex items-end flex-col gap-3">
 			<h1 class="mr-auto text-2xl font-bold">Personal Information</h1>
 
@@ -207,7 +207,7 @@
 		</div>
 	</div>
 
-	<div class="flex m-auto mt-4 justify-center border-2 border-slate-800 p-4" style="width: 500px;">
+	<div class="flex m-auto mt-4 justify-center border-2 border-neutral-400 p-4" style="width: 500px;">
 		<div bind:this={signatureElement}>
 			<Signature {...fields} />
 		</div>
@@ -215,7 +215,7 @@
 
 	<div class="flex justify-center">
 		<button
-			class="text-white bg-violet-500 w-64 hover:transition-all hover:bg-violet-700 p-2 my-4 rounded-md"
+			class="text-white bg-violet-500 w-64 hover:transition-all hover:bg-violet-700 p-2 my-4 rounded-md shadow-md hover:shadow-sm"
 			on:click={copySignature}
 		>
 			{buttonText}
