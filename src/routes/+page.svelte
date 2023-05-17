@@ -13,6 +13,13 @@
 		link: 'https://www.theblock.co/'
 	};
 
+  const hoverable = {
+    'twitter': false,
+    'linkedin': false,
+    'telegram': false,
+    'link': false
+  }
+
 	let signatureElement: HTMLElement;
 	let successMessage = false;
 	$: buttonText = successMessage ? 'Copied!' : 'Copy Signature';
@@ -32,11 +39,15 @@
 			})
 		]);
 	}
+
+  function highlightBox (label: string, flag: boolean) {
+    hoverable[label] = flag
+  }
 </script>
 
 <div>
 	<div class="flex gap-12 p-4 justify-center border-2 bg-slate-50 border-slate-50 shadow-md w-auto">
-		<div class="personal flex items-end flex-col gap-3">
+		<div class="personal flex items-end flex-col gap-4">
 			<h1 class="mr-auto text-2xl font-bold">Personal Information</h1>
 
 			<div class="flex flex-col gap-2" transition:fly={{ x: 100, duration: 350 }}>
@@ -58,7 +69,12 @@
 			</div>
 
 			<div class="flex flex-col gap-2" transition:fly={{ x: 100, duration: 350 }}>
-				<label class="font-medium" for="number"> Phone Number (Optional) </label>
+				<label class="flex gap-2 font-medium" for="number"> 
+          Phone number
+          <div class="capitalize p-1 rounded-md font-semibold text-xs bg-purple-200 text-purple-600">
+            OPTIONAL
+          </div>
+        </label>
 				<input
 					class="shadow-md focus:outline-none focus:border-2 focus:border-violet-500 focus:shadow-sm focus:shadow-violet-300 py-2 px-3 w-72"
 					name="number"
@@ -78,7 +94,7 @@
 			<div class="flex flex-col gap-2" transition:fly={{ x: 100, duration: 350 }}>
 				<label class="font-medium" for="personalTwitter"> Personal Twitter </label>
 				<input
-					class="shadow-md focus:outline-none focus:border-2 focus:border-violet-500 focus:shadow-sm focus:shadow-violet-300 py-2 px-3 w-72"
+					class="shadow-md focus:outline-none focus:border-2 focus:border-sky-500 focus:shadow-sm focus:shadow-sky-300 py-2 px-3 w-72"
 					name="personalTwitter"
 					bind:value={fields.personalTwitter}
 				/>
@@ -87,7 +103,7 @@
 			<div class="flex flex-col gap-2" transition:fly={{ x: 100, duration: 350 }}>
 				<label class="font-medium" for="personalTelegram"> Personal Telegram </label>
 				<input
-					class="shadow-md focus:outline-none focus:border-2 focus:border-violet-500 focus:shadow-sm focus:shadow-violet-300 py-2 px-3 w-72"
+					class="shadow-md focus:outline-none focus:border-2 focus:border-blue-800 focus:shadow-sm focus:shadow-blue-600 py-2 px-3 w-72"
 					name="personalTelegram"
 					bind:value={fields.personalTelegram}
 				/>
@@ -102,9 +118,11 @@
 					<label class="font-medium" for="twitter"> Twitter </label>
 					<div class="flex">
 						<input
-							class="shadow-md bg-slate-50 text-slate-500 focus:outline-none focus:border-2 focus:border-sky-500 focus:shadow-sm focus:shadow-sky-300 py-2 px-3 w-72"
+							class="shadow-md bg-slate-50 text-slate-500 focus:outline-none focus:border-2 focus:border-sky-500 focus:shadow-sm focus:shadow-sky-300 py-2 px-3 w-72 transition-colors"
+              class:bg-rose-300={hoverable.twitter}
+              class:text-rose-800={hoverable.twitter}
 							name="twitter"
-              readonly
+              disabled readonly
 							bind:value={fields.twitter}
 						/>
 						<button
@@ -112,8 +130,10 @@
 							on:click={() => {
 								fields.twitter = '';
 							}}
+              on:mouseover={() => highlightBox('twitter', true)}
+              on:mouseout={() => highlightBox('twitter', false)}
 						>
-							X
+							Hide
 						</button>
 					</div>
 				</div>
@@ -124,9 +144,11 @@
 					<label class="font-medium" for="linkedin"> LinkedIn </label>
 					<div class="flex">
 						<input
-							class="shadow-md bg-slate-50 text-slate-500 focus:outline-none focus:border-2 focus:border-sky-800 focus:shadow-sm focus:shadow-sky-600 py-2 px-3 w-72"
+							class="shadow-md bg-slate-50 text-slate-500 focus:outline-none focus:border-2 focus:border-sky-800 focus:shadow-sm focus:shadow-sky-600 py-2 px-3 w-72 transition-colors"
+              class:bg-rose-300={hoverable.linkedin}
+              class:text-rose-800={hoverable.linkedin}
 							name="linkedin"
-              readonly
+              disabled readonly
 							bind:value={fields.linkedin}
 						/>
 						<button
@@ -134,8 +156,10 @@
 							on:click={() => {
 								fields.linkedin = '';
 							}}
+              on:mouseover={() => highlightBox('linkedin', true)}
+              on:mouseout={() => highlightBox('linkedin', false)}
 						>
-							X
+							Hide
 						</button>
 					</div>
 				</div>
@@ -146,8 +170,10 @@
 					<label class="font-medium" for="telegram"> Telegram </label>
 					<div class="flex">
 						<input
-							class="shadow-md bg-slate-50 text-slate-500 focus:outline-none focus:border-2 focus:border-blue-600 focus:shadow-sm focus:shadow-blue-400 py-2 px-3 w-72"
-              readonly
+							class="shadow-md bg-slate-50 text-slate-500 focus:outline-none focus:border-2 focus:border-blue-600 focus:shadow-sm focus:shadow-blue-400 transition-colors py-2 px-3 w-72"
+              class:bg-rose-300={hoverable.telegram}
+              class:text-rose-800={hoverable.telegram}
+              disabled readonly
 							bind:value={fields.telegram}
 						/>
 						<button
@@ -155,8 +181,10 @@
 							on:click={() => {
 								fields.telegram = '';
 							}}
+              on:mouseover={() => highlightBox('telegram', true)}
+              on:mouseout={() => highlightBox('telegram', false)}
 						>
-							X
+							Hide
 						</button>
 					</div>
 				</div>
@@ -167,18 +195,22 @@
 					<label class="font-medium" for="link"> Link </label>
 					<div class="flex">
 						<input
-							class="shadow-md bg-slate-50 text-slate-500 focus:outline-none focus:border-2 focus:border-slate-500 focus:shadow-sm focus:shadow-slate-300 py-2 px-3 w-72"
+							class="shadow-md bg-slate-50 text-slate-500 focus:outline-none focus:border-2 focus:border-slate-500 focus:shadow-sm focus:shadow-slate-300 py-2 px-3 w-72 transition-colors"
+              class:bg-rose-300={hoverable.link}
+              class:text-rose-800={hoverable.link}
 							name="link"
-              readonly
+              disabled readonly
 							bind:value={fields.link}
 						/>
 						<button
 							class="px-4 ml-2 self-center h-10 leading-4 justify-center transition-all bg-rose-600 shadow-md hover:bg-rose-700 hover:shadow-sm rounded-md text-md text-neutral-50 font-semibold"
+              on:mouseover={() => highlightBox('link', true)}
+              on:mouseout={() => highlightBox('link', false)}
 							on:click={() => {
 								fields.link = '';
 							}}
 						>
-							X
+							Hide
 						</button>
 					</div>
 				</div>
