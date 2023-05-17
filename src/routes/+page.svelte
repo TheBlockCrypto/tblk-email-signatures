@@ -118,7 +118,9 @@
 					<label class="font-medium" for="twitter"> Twitter </label>
 					<div class="flex">
 						<input
-							class="shadow-md bg-slate-50 text-slate-500 focus:outline-none focus:border-2 focus:border-sky-500 focus:shadow-sm focus:shadow-sky-300 py-2 px-3 w-72 transition-colors"
+							class="shadow-md focus:outline-none focus:border-2 focus:border-sky-500 focus:shadow-sm focus:shadow-sky-300 py-2 px-3 w-72 transition-colors"
+              class:bg-slate-50={!hoverable.twitter}
+              class:text-slate-500={!hoverable.twitter}
               class:bg-rose-300={hoverable.twitter}
               class:text-rose-800={hoverable.twitter}
 							name="twitter"
@@ -144,7 +146,9 @@
 					<label class="font-medium" for="linkedin"> LinkedIn </label>
 					<div class="flex">
 						<input
-							class="shadow-md bg-slate-50 text-slate-500 focus:outline-none focus:border-2 focus:border-sky-800 focus:shadow-sm focus:shadow-sky-600 py-2 px-3 w-72 transition-colors"
+							class="shadow-md focus:outline-none focus:border-2 focus:border-sky-800 focus:shadow-sm focus:shadow-sky-600 py-2 px-3 w-72 transition-colors"
+              class:bg-slate-50={!hoverable.linkedin}
+              class:text-slate-500={!hoverable.linkedin}
               class:bg-rose-300={hoverable.linkedin}
               class:text-rose-800={hoverable.linkedin}
 							name="linkedin"
@@ -170,7 +174,9 @@
 					<label class="font-medium" for="telegram"> Telegram </label>
 					<div class="flex">
 						<input
-							class="shadow-md bg-slate-50 text-slate-500 focus:outline-none focus:border-2 focus:border-blue-600 focus:shadow-sm focus:shadow-blue-400 transition-colors py-2 px-3 w-72"
+							class="shadow-md focus:outline-none focus:border-2 focus:border-blue-600 focus:shadow-sm focus:shadow-blue-400 transition-colors py-2 px-3 w-72"
+              class:bg-slate-50={!hoverable.telegram}
+              class:text-slate-500={!hoverable.telegram}
               class:bg-rose-300={hoverable.telegram}
               class:text-rose-800={hoverable.telegram}
               disabled readonly
@@ -195,7 +201,9 @@
 					<label class="font-medium" for="link"> Link </label>
 					<div class="flex">
 						<input
-							class="shadow-md bg-slate-50 text-slate-500 focus:outline-none focus:border-2 focus:border-slate-500 focus:shadow-sm focus:shadow-slate-300 py-2 px-3 w-72 transition-colors"
+							class="shadow-md focus:outline-none focus:border-2 focus:border-slate-500 focus:shadow-sm focus:shadow-slate-300 py-2 px-3 w-72 transition-colors"
+              class:bg-slate-50={!hoverable.link}
+              class:text-slate-500={!hoverable.link}
               class:bg-rose-300={hoverable.link}
               class:text-rose-800={hoverable.link}
 							name="link"
