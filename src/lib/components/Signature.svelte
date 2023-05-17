@@ -3,13 +3,14 @@
 	export let title = 'Head of Design';
 	export let number = '412-320-9999';
 	export let location = 'Colorado Springs, CO (MDT)';
+	export let personalTwitter = '';
+	export let personalTelegram = '';
 
 	export let twitter = 'https://twitter.com/TheBlock__';
-	export let instagram = 'https://instagram.com/theblockcrypto/';
 	export let linkedin = 'https://linkedin.com/theblockcrypto/';
 	export let telegram = 'https://t.me/theblock';
-	export let whatsapp = 'https://wa.me/number';
 	export let link = 'https://www.theblock.co/';
+
 
 	import SocialIcon from '$lib/components/Social.svelte';
 </script>
@@ -88,16 +89,18 @@
 												</span>
 											</td>
 										</tr>
-										<tr>
-											<td
-												style="border-collapse: collapse; font-family:Helvetica, sans-serif; font-size: 12px; font-style: normal; line-height: 14px; font-weight: 400; padding-bottom: 2px;"
-											>
-												<span
-													style="font-family:Helvetica, sans-serif;font-size:12px;font-style:normal;line-height:16px;font-weight:400;color:#111111;display:inline;"
-													>{number}</span
-												>
-											</td>
-										</tr>
+                    {#if number}
+                      <tr>
+                        <td
+                          style="border-collapse: collapse; font-family:Helvetica, sans-serif; font-size: 12px; font-style: normal; line-height: 14px; font-weight: 400; padding-bottom: 2px;"
+                        >
+                          <span
+                            style="font-family:Helvetica, sans-serif;font-size:12px;font-style:normal;line-height:16px;font-weight:400;color:#111111;display:inline;"
+                            >{number}</span
+                          >
+                        </td>
+                      </tr>
+                    {/if}
 										<tr>
 											<td
 												style="border-collapse: collapse; font-family:Helvetica, sans-serif; font-size: 12px; font-style: normal; line-height: 14px; font-weight: 400; padding-bottom: 12px;"
@@ -108,6 +111,30 @@
 												>
 											</td>
 										</tr>
+                    {#if personalTwitter}
+                      <tr>
+                        <td
+                          style="border-collapse: collapse; font-family:Helvetica, sans-serif; font-size: 12px; font-style: normal; line-height: 14px; font-weight: 400; padding-bottom: 12px;"
+                        >
+                          <span
+                            style="font-family:Helvetica, sans-serif;font-size:12px;font-style:normal;line-height:16px;font-weight:400;color:#111111;display:inline;"
+                            >{personalTwitter}</span
+                          >
+                        </td>
+                      </tr>
+                    {/if}
+                    {#if personalTelegram}
+                      <tr>
+                        <td
+                          style="border-collapse: collapse; font-family:Helvetica, sans-serif; font-size: 12px; font-style: normal; line-height: 14px; font-weight: 400; padding-bottom: 12px;"
+                        >
+                          <span
+                            style="font-family:Helvetica, sans-serif;font-size:12px;font-style:normal;line-height:16px;font-weight:400;color:#111111;display:inline;"
+                            >{personalTelegram}</span
+                          >
+                        </td>
+                      </tr>
+                    {/if}
 									</tbody>
 								</table>
 								<table
@@ -124,11 +151,6 @@
 												alt={'twitter'}
 											/>
 											<SocialIcon
-												logo={'https://www.tbstat.com/wp/uploads/2023/05/instagram-1.png'}
-												url={instagram}
-												alt={'instagram'}
-											/>
-											<SocialIcon
 												logo={'https://www.tbstat.com/wp/uploads/2023/05/linkedin-1.png'}
 												url={linkedin}
 												alt={'linkedin'}
@@ -137,11 +159,6 @@
 												logo={'https://www.tbstat.com/wp/uploads/2023/05/telegram-1.png'}
 												url={telegram}
 												alt={'telegram'}
-											/>
-											<SocialIcon
-												logo={'https://www.tbstat.com/wp/uploads/2023/05/whatsapp-1.png'}
-												url={whatsapp}
-												alt={'whatsapp'}
 											/>
 											<SocialIcon
 												logo={'https://www.tbstat.com/wp/uploads/2023/05/link-1.png'}

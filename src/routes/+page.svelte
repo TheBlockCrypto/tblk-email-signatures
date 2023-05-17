@@ -2,14 +2,14 @@
 	const fields = {
 		name: 'Josh Gragg',
 		title: 'Head of Design',
-		number: '412-320-9999',
+		number: '555-666-1337',
 		location: 'Colorado Springs, CO (MDT)',
+    personalTwitter: '',
+    personalTelegram: '',
 
 		twitter: 'https://twitter.com/TheBlock__',
-		instagram: 'https://instagram.com/theblockcrypto/',
-		linkedin: 'https://linkedin.com/theblockcrypto/',
+		linkedin: 'https://linkedin.com/company/theblockcrypto/',
 		telegram: 'https://t.me/theblock',
-		whatsapp: 'https://wa.me/number',
 		link: 'https://www.theblock.co/'
 	};
 
@@ -58,7 +58,7 @@
 			</div>
 
 			<div class="flex flex-col gap-2" transition:fly={{ x: 100, duration: 350 }}>
-				<label class="font-medium" for="number"> Phone Number </label>
+				<label class="font-medium" for="number"> Phone Number (Optional) </label>
 				<input
 					class="shadow-md focus:outline-none focus:border-2 focus:border-violet-500 focus:shadow-sm focus:shadow-violet-300 py-2 px-3 w-72"
 					name="number"
@@ -74,6 +74,24 @@
 					bind:value={fields.location}
 				/>
 			</div>
+
+			<div class="flex flex-col gap-2" transition:fly={{ x: 100, duration: 350 }}>
+				<label class="font-medium" for="personalTwitter"> Personal Twitter </label>
+				<input
+					class="shadow-md focus:outline-none focus:border-2 focus:border-violet-500 focus:shadow-sm focus:shadow-violet-300 py-2 px-3 w-72"
+					name="personalTwitter"
+					bind:value={fields.personalTwitter}
+				/>
+			</div>
+
+			<div class="flex flex-col gap-2" transition:fly={{ x: 100, duration: 350 }}>
+				<label class="font-medium" for="personalTelegram"> Personal Telegram </label>
+				<input
+					class="shadow-md focus:outline-none focus:border-2 focus:border-violet-500 focus:shadow-sm focus:shadow-violet-300 py-2 px-3 w-72"
+					name="personalTelegram"
+					bind:value={fields.personalTelegram}
+				/>
+			</div>
 		</div>
 
 		<div class="social flex flex-col gap-3">
@@ -84,8 +102,9 @@
 					<label class="font-medium" for="twitter"> Twitter </label>
 					<div class="flex">
 						<input
-							class="shadow-md focus:outline-none focus:border-2 focus:border-sky-500 focus:shadow-sm focus:shadow-sky-300 py-2 px-3 w-72"
+							class="shadow-md bg-slate-50 text-slate-500 focus:outline-none focus:border-2 focus:border-sky-500 focus:shadow-sm focus:shadow-sky-300 py-2 px-3 w-72"
 							name="twitter"
+              readonly
 							bind:value={fields.twitter}
 						/>
 						<button
@@ -100,35 +119,14 @@
 				</div>
 			{/if}
 
-			{#if fields.instagram}
-				<div class="flex flex-col gap-2" transition:fly={{ x: 100, duration: 350 }}>
-					<label class="font-medium" for="instagram"> Instagram </label>
-
-					<div class="flex">
-						<input
-							class="shadow-md focus:outline-none focus:border-2 focus:border-fuchsia-500 focus:shadow-sm focus:shadow-rose-400 py-2 px-3 w-72"
-							name="instagram"
-							bind:value={fields.instagram}
-						/>
-						<button
-							class="px-4 ml-2 self-center h-10 leading-4 justify-center transition-all bg-rose-600 shadow-md hover:bg-rose-700 hover:shadow-sm rounded-md text-md text-neutral-50 font-semibold"
-							on:click={() => {
-								fields.instagram = '';
-							}}
-						>
-							X
-						</button>
-					</div>
-				</div>
-			{/if}
-
 			{#if fields.linkedin}
 				<div class="flex flex-col gap-2" transition:fly={{ x: 100, duration: 350 }}>
 					<label class="font-medium" for="linkedin"> LinkedIn </label>
 					<div class="flex">
 						<input
-							class="shadow-md focus:outline-none focus:border-2 focus:border-sky-800 focus:shadow-sm focus:shadow-sky-600 py-2 px-3 w-72"
+							class="shadow-md bg-slate-50 text-slate-500 focus:outline-none focus:border-2 focus:border-sky-800 focus:shadow-sm focus:shadow-sky-600 py-2 px-3 w-72"
 							name="linkedin"
+              readonly
 							bind:value={fields.linkedin}
 						/>
 						<button
@@ -148,7 +146,8 @@
 					<label class="font-medium" for="telegram"> Telegram </label>
 					<div class="flex">
 						<input
-							class="shadow-md focus:outline-none focus:border-2 focus:border-blue-600 focus:shadow-sm focus:shadow-blue-400 py-2 px-3 w-72"
+							class="shadow-md bg-slate-50 text-slate-500 focus:outline-none focus:border-2 focus:border-blue-600 focus:shadow-sm focus:shadow-blue-400 py-2 px-3 w-72"
+              readonly
 							bind:value={fields.telegram}
 						/>
 						<button
@@ -163,34 +162,14 @@
 				</div>
 			{/if}
 
-			{#if fields.whatsapp}
-				<div class="flex flex-col gap-2" transition:fly={{ x: 100, duration: 350 }}>
-					<label class="font-medium" for="whatsapp"> WhatsApp </label>
-					<div class="flex">
-						<input
-							class="shadow-md focus:outline-none focus:border-2 focus:border-green-500 focus:shadow-sm focus:shadow-green-300 py-2 px-3 w-72"
-							name="whatsapp"
-							bind:value={fields.whatsapp}
-						/>
-						<button
-							class="px-4 ml-2 self-center h-10 leading-4 justify-center transition-all bg-rose-600 shadow-md hover:bg-rose-700 hover:shadow-sm rounded-md text-md text-neutral-50 font-semibold"
-							on:click={() => {
-								fields.whatsapp = '';
-							}}
-						>
-							X
-						</button>
-					</div>
-				</div>
-			{/if}
-
 			{#if fields.link}
 				<div class="flex flex-col gap-2" transition:fly={{ x: 100, duration: 350 }}>
 					<label class="font-medium" for="link"> Link </label>
 					<div class="flex">
 						<input
-							class="shadow-md focus:outline-none focus:border-2 focus:border-slate-500 focus:shadow-sm focus:shadow-slate-300 py-2 px-3 w-72"
+							class="shadow-md bg-slate-50 text-slate-500 focus:outline-none focus:border-2 focus:border-slate-500 focus:shadow-sm focus:shadow-slate-300 py-2 px-3 w-72"
 							name="link"
+              readonly
 							bind:value={fields.link}
 						/>
 						<button
