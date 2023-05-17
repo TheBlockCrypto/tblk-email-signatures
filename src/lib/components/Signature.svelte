@@ -11,6 +11,7 @@
 	export let telegram = 'https://t.me/theblock';
 	export let link = 'https://www.theblock.co/';
 
+  $: totalBottomPadding = (twitter || linkedin || telegram || link) ? '12px' : ''
 
 	import SocialIcon from '$lib/components/Social.svelte';
 </script>
@@ -103,7 +104,7 @@
                     {/if}
 										<tr>
 											<td
-												style="border-collapse: collapse; font-family:Helvetica, sans-serif; font-size: 12px; font-style: normal; line-height: 14px; font-weight: 400; padding-bottom: 12px;"
+												style="border-collapse: collapse; font-family:Helvetica, sans-serif; font-size: 12px; font-style: normal; line-height: 14px; font-weight: 400; padding-bottom: { personalTwitter || personalTelegram ? '4px' : totalBottomPadding}"
 											>
 												<span
 													style="font-family:Helvetica, sans-serif;font-size:12px;font-style:normal;line-height:16px;font-weight:400;color:#111111;display:inline;"
@@ -114,7 +115,7 @@
                     {#if personalTwitter}
                       <tr>
                         <td
-                          style="border-collapse: collapse; font-family:Helvetica, sans-serif; font-size: 12px; font-style: normal; line-height: 14px; font-weight: 400; padding-bottom: 12px;"
+                          style="border-collapse: collapse; font-family:Helvetica, sans-serif; font-size: 12px; font-style: normal; line-height: 14px; font-weight: 400; padding-bottom: { personalTelegram ? '4px' : totalBottomPadding }"
                         >
                           <span
                             style="font-family:Helvetica, sans-serif;font-size:12px;font-style:normal;line-height:16px;font-weight:400;color:#111111;display:inline;"
@@ -126,7 +127,7 @@
                     {#if personalTelegram}
                       <tr>
                         <td
-                          style="border-collapse: collapse; font-family:Helvetica, sans-serif; font-size: 12px; font-style: normal; line-height: 14px; font-weight: 400; padding-bottom: 12px;"
+                          style="border-collapse: collapse; font-family:Helvetica, sans-serif; font-size: 12px; font-style: normal; line-height: 14px; font-weight: 400; padding-bottom: { totalBottomPadding }"
                         >
                           <span
                             style="font-family:Helvetica, sans-serif;font-size:12px;font-style:normal;line-height:16px;font-weight:400;color:#111111;display:inline;"
