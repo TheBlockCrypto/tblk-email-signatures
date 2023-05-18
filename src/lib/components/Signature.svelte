@@ -10,8 +10,10 @@
 	export let linkedin = 'https://linkedin.com/theblockcrypto/';
 	export let telegram = 'https://t.me/theblock';
 	export let link = 'https://www.theblock.co/';
+  export let proLink = 'https://www.theblock.pro'
+  export let proTwitter = 'https://www.twitter.com/TheBlockPro__'
 
-  $: totalBottomPadding = (twitter || linkedin || telegram || link) ? '12px' : ''
+  $: totalBottomPadding = '4px'
 
 	import SocialIcon from '$lib/components/Social.svelte';
 </script>
@@ -136,13 +138,31 @@
                         </td>
                       </tr>
                     {/if}
+                    {#if proLink}
+                      <tr>
+                        <td
+                          style="border-collapse: collapse; font-family:Helvetica, sans-serif; font-size: 12px; font-style: normal; line-height: 14px; font-weight: 400; padding-bottom: { totalBottomPadding }"
+                        >
+                         <a style="font-family:Helvetica, sans-serif;font-size:12px;font-style:normal;line-height:16px;font-weight:400;color:#0B50CF;display:inline;" href={proLink} target="_blank"> The Block Pro </a>
+                        </td>
+                      </tr>
+                    {/if}
+                    {#if proTwitter}
+                      <tr>
+                        <td
+                          style="border-collapse: collapse; font-family:Helvetica, sans-serif; font-size: 12px; font-style: normal; line-height: 14px; font-weight: 400; padding-bottom: { totalBottomPadding }"
+                        >
+                         <a style="font-family:Helvetica, sans-serif;font-size:12px;font-style:normal;line-height:16px;font-weight:400;color:#0B50CF;display:inline;" href={proTwitter} target="_blank"> @TheBlockPro__ </a>
+                        </td>
+                      </tr>
+                    {/if}
 									</tbody>
 								</table>
 								<table
 									border="0"
 									cellpadding="0"
 									cellspacing="0"
-									style="font-family:Arial,Helvetica,sans-serif;line-height:0px;font-size:1px;padding:0px!important;border-spacing:0px;margin:0px;border-collapse:collapse;"
+									style="font-family:Arial,Helvetica,sans-serif;line-height:0px;font-size:1px;padding:0px!important;margin: 12px 0 0 0!important;border-spacing:0px;border-collapse:collapse;"
 								>
 									<tbody>
 										<tr>

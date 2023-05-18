@@ -10,14 +10,18 @@
 		twitter: 'https://twitter.com/TheBlock__',
 		linkedin: 'https://linkedin.com/company/theblockcrypto/',
 		telegram: 'https://t.me/theblock',
-		link: 'https://www.theblock.co/'
+		link: 'https://www.theblock.co/',
+    proLink: 'https://www.theblock.pro',
+    proTwitter: 'https://www.twitter.com/TheBlockPro__'
 	};
 
   const hoverable = {
     'twitter': false,
     'linkedin': false,
     'telegram': false,
-    'link': false
+    'link': false,
+    proLink: false,
+    proTwitter: false
   }
 
 	let signatureElement: HTMLElement;
@@ -83,7 +87,12 @@
 			</div>
 
 			<div class="flex flex-col gap-2" transition:fly={{ x: 100, duration: 350 }}>
-				<label class="font-medium" for="location"> Location </label>
+				<label class="flex gap-2 font-medium" for="location">
+          Location 
+          <div class="capitalize p-1 rounded-md font-semibold text-xs bg-purple-200 text-purple-600">
+            OPTIONAL
+          </div>
+        </label>
 				<input
 					class="shadow-md focus:outline-none focus:border-2 focus:border-violet-500 focus:shadow-sm focus:shadow-violet-300 py-2 px-3 w-72"
 					name="location"
@@ -92,7 +101,12 @@
 			</div>
 
 			<div class="flex flex-col gap-2" transition:fly={{ x: 100, duration: 350 }}>
-				<label class="font-medium" for="personalTwitter"> Personal Twitter </label>
+				<label class="flex gap-2 font-medium" for="personalTwitter">
+          Personal Twitter 
+          <div class="capitalize p-1 rounded-md font-semibold text-xs bg-purple-200 text-purple-600">
+            OPTIONAL
+          </div>
+        </label>
 				<input
 					class="shadow-md focus:outline-none focus:border-2 focus:border-sky-500 focus:shadow-sm focus:shadow-sky-300 py-2 px-3 w-72"
 					name="personalTwitter"
@@ -101,7 +115,12 @@
 			</div>
 
 			<div class="flex flex-col gap-2" transition:fly={{ x: 100, duration: 350 }}>
-				<label class="font-medium" for="personalTelegram"> Personal Telegram </label>
+				<label class="flex gap-2 font-medium" for="personalTelegram">
+          Personal Telegram 
+          <div class="capitalize p-1 rounded-md font-semibold text-xs bg-purple-200 text-purple-600">
+            OPTIONAL
+          </div>
+        </label>
 				<input
 					class="shadow-md focus:outline-none focus:border-2 focus:border-blue-800 focus:shadow-sm focus:shadow-blue-600 py-2 px-3 w-72"
 					name="personalTelegram"
@@ -110,7 +129,7 @@
 			</div>
 		</div>
 
-		<div class="social flex flex-col gap-3">
+		<div class="social flex flex-col gap-4">
 			<h1 class="text-2xl font-bold">Social Media</h1>
 
 			{#if fields.twitter}
@@ -216,6 +235,72 @@
               on:mouseout={() => highlightBox('link', false)}
 							on:click={() => {
 								fields.link = '';
+							}}
+						>
+							Hide
+						</button>
+					</div>
+				</div>
+			{/if}
+
+			{#if fields.proLink}
+				<div class="flex flex-col gap-2" transition:fly={{ x: 100, duration: 350 }}>
+					<label class="flex gap-2 font-medium" for="link">
+            Pro URL
+            <div class="capitalize p-1 rounded-md font-semibold text-xs bg-purple-200 text-purple-600">
+              OPTIONAL
+            </div>
+          </label>
+					<div class="flex">
+						<input
+							class="shadow-md focus:outline-none focus:border-2 focus:border-slate-500 focus:shadow-sm focus:shadow-slate-300 py-2 px-3 w-72 transition-colors"
+              class:bg-slate-50={!hoverable.proLink}
+              class:text-slate-500={!hoverable.proLink}
+              class:bg-rose-300={hoverable.proLink}
+              class:text-rose-800={hoverable.proLink}
+							name="link"
+              disabled readonly
+							bind:value={fields.proLink}
+						/>
+						<button
+							class="px-4 ml-2 self-center h-10 leading-4 justify-center transition-all bg-rose-600 shadow-md hover:bg-rose-700 hover:shadow-sm rounded-md text-md text-neutral-50 font-semibold"
+              on:mouseover={() => highlightBox('proLink', true)}
+              on:mouseout={() => highlightBox('proLink', false)}
+							on:click={() => {
+								fields.proLink = '';
+							}}
+						>
+							Hide
+						</button>
+					</div>
+				</div>
+			{/if}
+
+			{#if fields.proTwitter}
+				<div class="flex flex-col gap-2" transition:fly={{ x: 100, duration: 350 }}>
+					<label class="flex gap-2 font-medium" for="link">
+            Pro Twitter
+            <div class="capitalize p-1 rounded-md font-semibold text-xs bg-purple-200 text-purple-600">
+              OPTIONAL
+            </div>
+          </label>
+					<div class="flex">
+						<input
+							class="shadow-md focus:outline-none focus:border-2 focus:border-slate-500 focus:shadow-sm focus:shadow-slate-300 py-2 px-3 w-72 transition-colors"
+              class:bg-slate-50={!hoverable.proTwitter}
+              class:text-slate-500={!hoverable.proTwitter}
+              class:bg-rose-300={hoverable.proTwitter}
+              class:text-rose-800={hoverable.proTwitter}
+							name="link"
+              disabled readonly
+							bind:value={fields.proTwitter}
+						/>
+						<button
+							class="px-4 ml-2 self-center h-10 leading-4 justify-center transition-all bg-rose-600 shadow-md hover:bg-rose-700 hover:shadow-sm rounded-md text-md text-neutral-50 font-semibold"
+              on:mouseover={() => highlightBox('proTwitter', true)}
+              on:mouseout={() => highlightBox('proTwitter', false)}
+							on:click={() => {
+								fields.proTwitter = '';
 							}}
 						>
 							Hide
