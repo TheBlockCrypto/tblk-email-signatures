@@ -1,5 +1,5 @@
 <script lang="ts">
-	const fields = {
+	let fields = {
 		name: 'Josh Gragg',
 		title: 'Head of Design',
 		number: '555-666-1337',
@@ -43,6 +43,24 @@
 			})
 		]);
 	}
+
+  function resetToDefaults() {
+    fields =  {
+      name: 'Josh Gragg',
+      title: 'Head of Design',
+      number: '555-666-1337',
+      location: 'Colorado Springs, CO (MDT)',
+      personalTwitter: '',
+      personalTelegram: '',
+
+      twitter: 'https://twitter.com/TheBlock__',
+      linkedin: 'https://linkedin.com/company/theblockcrypto/',
+      telegram: 'https://t.me/theblock',
+      link: 'https://www.theblock.co/',
+      proLink: 'https://www.theblock.pro',
+      proTwitter: 'https://www.twitter.com/TheBlockPro__'
+    }
+  }
 
   function highlightBox (label: string, flag: boolean) {
     hoverable[label] = flag
@@ -247,9 +265,6 @@
 				<div class="flex flex-col gap-2" transition:fly={{ x: 100, duration: 350 }}>
 					<label class="flex gap-2 font-medium" for="link">
             Pro URL
-            <div class="capitalize p-1 rounded-md font-semibold text-xs bg-purple-200 text-purple-600">
-              OPTIONAL
-            </div>
           </label>
 					<div class="flex">
 						<input
@@ -280,9 +295,6 @@
 				<div class="flex flex-col gap-2" transition:fly={{ x: 100, duration: 350 }}>
 					<label class="flex gap-2 font-medium" for="link">
             Pro Twitter
-            <div class="capitalize p-1 rounded-md font-semibold text-xs bg-purple-200 text-purple-600">
-              OPTIONAL
-            </div>
           </label>
 					<div class="flex">
 						<input
@@ -317,12 +329,18 @@
 		</div>
 	</div>
 
-	<div class="flex justify-center">
+	<div class="flex flex-col items-center justify-center">
 		<button
-			class="text-white bg-violet-500 w-64 hover:transition-all hover:bg-violet-700 p-2 my-4 rounded-md shadow-md hover:shadow-sm"
+			class="text-white bg-violet-500 w-64 hover:transition-all hover:bg-violet-700 p-2 my-4 rounded-md shadow-md hover:shadow-sm active:scale-x-90 transition-transform"
 			on:click={copySignature}
 		>
 			{buttonText}
+		</button>
+		<button
+			class="text-white bg-violet-600 w-64 hover:transition-all hover:bg-violet-700 p-2 my-4 rounded-md shadow-md hover:shadow-sm active:scale-x-90 transition-transform"
+			on:click={resetToDefaults}
+		>
+			Reset to Defaults
 		</button>
 	</div>
 </div>
