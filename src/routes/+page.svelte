@@ -38,7 +38,6 @@
 		}, 1500);
 		navigator.clipboard.write([
 			new ClipboardItem({
-				'text/plain': new Blob([signatureElement.innerText], { type: 'text/plain' }),
 				'text/html': new Blob([signatureElement.innerHTML], { type: 'text/html' })
 			})
 		]);
