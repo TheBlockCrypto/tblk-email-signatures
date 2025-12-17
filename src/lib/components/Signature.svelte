@@ -9,11 +9,9 @@
 	export let twitter = 'https://twitter.com/TheBlock__';
 	export let linkedin = 'https://linkedin.com/theblockcrypto/';
 	export let telegram = 'https://t.me/theblock';
-	export let link = 'https://www.theblock.co/';
-  export let proLink = 'https://www.theblock.pro'
-  export let proTwitter = 'https://www.twitter.com/TheBlockPro__'
+	export let youtube = 'https://www.youtube.com/@theblockcrypto';
 
-  $: totalBottomPadding = '4px'
+	$: totalBottomPadding = '4px';
 
 	import SocialIcon from '$lib/components/Social.svelte';
 </script>
@@ -52,7 +50,7 @@
 														width="60"
 														alt="image"
 														border="0"
-														src="https://www.tbstat.com/wp/uploads/2023/05/TB_Blue.png"
+														src="https://www.tbstat.com/wp/uploads/2025/12/block_logo.png"
 													/></a
 												>
 											</td>
@@ -92,21 +90,24 @@
 												</span>
 											</td>
 										</tr>
-                    {#if number}
-                      <tr>
-                        <td
-                          style="border-collapse: collapse; font-family:Helvetica, sans-serif; font-size: 12px; font-style: normal; line-height: 14px; font-weight: 400; padding-bottom: 2px;"
-                        >
-                          <span
-                            style="font-family:Helvetica, sans-serif;font-size:12px;font-style:normal;line-height:16px;font-weight:400;color:#111111;display:inline;"
-                            >{number}</span
-                          >
-                        </td>
-                      </tr>
-                    {/if}
+										{#if number}
+											<tr>
+												<td
+													style="border-collapse: collapse; font-family:Helvetica, sans-serif; font-size: 12px; font-style: normal; line-height: 14px; font-weight: 400; padding-bottom: 2px;"
+												>
+													<span
+														style="font-family:Helvetica, sans-serif;font-size:12px;font-style:normal;line-height:16px;font-weight:400;color:#111111;display:inline;"
+														>{number}</span
+													>
+												</td>
+											</tr>
+										{/if}
 										<tr>
 											<td
-												style="border-collapse: collapse; font-family:Helvetica, sans-serif; font-size: 12px; font-style: normal; line-height: 14px; font-weight: 400; padding-bottom: { personalTwitter || personalTelegram ? '4px' : totalBottomPadding}"
+												style="border-collapse: collapse; font-family:Helvetica, sans-serif; font-size: 12px; font-style: normal; line-height: 14px; font-weight: 400; padding-bottom: {personalTwitter ||
+												personalTelegram
+													? '4px'
+													: totalBottomPadding}"
 											>
 												<span
 													style="font-family:Helvetica, sans-serif;font-size:12px;font-style:normal;line-height:16px;font-weight:400;color:#111111;display:inline;"
@@ -114,48 +115,45 @@
 												>
 											</td>
 										</tr>
-                    {#if personalTwitter}
-                      <tr>
-                        <td
-                          style="border-collapse: collapse; font-family:Helvetica, sans-serif; font-size: 12px; font-style: normal; line-height: 14px; font-weight: 400; padding-bottom: { personalTelegram ? '4px' : totalBottomPadding }"
-                        >
-                          <span
-                            style="font-family:Helvetica, sans-serif;font-size:12px;font-style:normal;line-height:16px;font-weight:400;color:#111111;display:inline;"
-                            >{personalTwitter}</span
-                          >
-                        </td>
-                      </tr>
-                    {/if}
-                    {#if personalTelegram}
-                      <tr>
-                        <td
-                          style="border-collapse: collapse; font-family:Helvetica, sans-serif; font-size: 12px; font-style: normal; line-height: 14px; font-weight: 400; padding-bottom: { totalBottomPadding }"
-                        >
-                          <span
-                            style="font-family:Helvetica, sans-serif;font-size:12px;font-style:normal;line-height:16px;font-weight:400;color:#111111;display:inline;"
-                            >{personalTelegram}</span
-                          >
-                        </td>
-                      </tr>
-                    {/if}
-                    {#if proLink}
-                      <tr>
-                        <td
-                          style="border-collapse: collapse; font-family:Helvetica, sans-serif; font-size: 12px; font-style: normal; line-height: 14px; font-weight: 400; padding-bottom: { totalBottomPadding }"
-                        >
-                         <a style="font-family:Helvetica, sans-serif;font-size:12px;font-style:normal;line-height:16px;font-weight:400;color:#0B50CF;display:inline;" href={proLink} target="_blank"> The Block Pro </a>
-                        </td>
-                      </tr>
-                    {/if}
-                    {#if proTwitter}
-                      <tr>
-                        <td
-                          style="border-collapse: collapse; font-family:Helvetica, sans-serif; font-size: 12px; font-style: normal; line-height: 14px; font-weight: 400; padding-bottom: { totalBottomPadding }"
-                        >
-                         <a style="font-family:Helvetica, sans-serif;font-size:12px;font-style:normal;line-height:16px;font-weight:400;color:#0B50CF;display:inline;" href={proTwitter} target="_blank"> @TheBlockPro__ </a>
-                        </td>
-                      </tr>
-                    {/if}
+										{#if personalTwitter}
+											<tr>
+												<td
+													style="border-collapse: collapse; font-family:Helvetica, sans-serif; font-size: 12px; font-style: normal; line-height: 14px; font-weight: 400; padding-bottom: {personalTelegram
+														? '4px'
+														: totalBottomPadding}"
+												>
+													<span
+														style="font-family:Helvetica, sans-serif;font-size:12px;font-style:normal;line-height:16px;font-weight:400;color:#111111;display:inline;"
+														>{personalTwitter}</span
+													>
+												</td>
+											</tr>
+										{/if}
+										{#if personalTelegram}
+											<tr>
+												<td
+													style="border-collapse: collapse; font-family:Helvetica, sans-serif; font-size: 12px; font-style: normal; line-height: 14px; font-weight: 400; padding-bottom: {totalBottomPadding}"
+												>
+													<span
+														style="font-family:Helvetica, sans-serif;font-size:12px;font-style:normal;line-height:16px;font-weight:400;color:#111111;display:inline;"
+														>{personalTelegram}</span
+													>
+												</td>
+											</tr>
+										{/if}
+										<tr>
+											<td
+												style="border-collapse: collapse; font-family:Helvetica, sans-serif; font-size: 12px; font-style: normal; line-height: 14px; font-weight: 400; padding-bottom: {totalBottomPadding}"
+											>
+												<a
+													style="font-family:Helvetica, sans-serif;font-size:12px;font-style:normal;line-height:16px;font-weight:400;color:#0B50CF;display:inline;"
+													href="https://www.theblock.co"
+													target="_blank"
+												>
+													The Block
+												</a>
+											</td>
+										</tr>
 									</tbody>
 								</table>
 								<table
@@ -167,7 +165,7 @@
 									<tbody>
 										<tr>
 											<SocialIcon
-												logo={'https://www.tbstat.com/wp/uploads/2023/05/twitter-1.png'}
+												logo={'https://www.tbstat.com/wp/uploads/2025/12/xtwitter2.png'}
 												url={twitter}
 												alt={'twitter'}
 											/>
@@ -182,9 +180,9 @@
 												alt={'telegram'}
 											/>
 											<SocialIcon
-												logo={'https://www.tbstat.com/wp/uploads/2023/05/link-1.png'}
-												url={link}
-												alt={'weblink'}
+												logo={'https://www.tbstat.com/wp/uploads/2025/12/youtube.png'}
+												url={youtube}
+												alt={'youtube'}
 											/>
 											<td style="padding:0px!important;" />
 										</tr>
